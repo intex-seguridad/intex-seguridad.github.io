@@ -1,50 +1,967 @@
 <!doctype html>
-<html lang="es">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0b1424">
-  <meta name="description" content="Intex: instalación de alarmas, cámaras de vigilancia, telefonía, redes e instalaciones eléctricas." />
-  <title>Intex | Seguridad, tecnología e instalaciones</title>
-  <style>
-    :root{--navy:#0b1424;--navy2:#111f34;--blue:#1c3657;--cyan:#35d2e5;--orange:#ff784f;--paper:#f4f7fa;--ink:#101b2a;--muted:#617084;--white:#fff;--line:rgba(255,255,255,.14);--max:1160px}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}a{color:inherit;text-decoration:none}.wrap{width:min(var(--max),calc(100% - 48px));margin:auto}
-    .top{background:#070d18;color:#c6d2df;font-size:11px;letter-spacing:.1em;text-transform:uppercase}.top .wrap{display:flex;justify-content:space-between;padding:11px 0}.top strong{color:var(--cyan)}
-    .nav{background:var(--navy);color:#fff;border-bottom:1px solid var(--line)}.navin{height:82px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:12px}.brandmark{width:52px;height:52px;display:block;flex:none}.brandtype b{display:block;color:#fff;font-size:24px;letter-spacing:.16em;font-weight:900}.brandtype small{display:block;color:#aebdca;font-size:8px;font-weight:700;letter-spacing:.11em;margin-top:4px}.footer .brandtype b{font-size:19px}.brand b{font-size:21px;letter-spacing:.12em;font-weight:900}.brand small{display:block;color:#9eafc2;font-size:9px;font-weight:700;letter-spacing:.18em;margin-top:4px}.links{display:flex;align-items:center;gap:27px;font-size:13px;color:#e4edf5}.links a:hover{color:var(--cyan)}.pill{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:5px;padding:13px 19px;background:var(--orange);color:#20130f;font-size:12px;font-weight:850;letter-spacing:.055em;text-transform:uppercase;box-shadow:0 8px 24px rgba(255,120,79,.18);transition:.2s}.pill:hover{transform:translateY(-2px);background:#ff9271}
-    .hero{position:relative;overflow:hidden;background:radial-gradient(ellipse at 77% 50%,#1c3b5b 0,#132742 30%,var(--navy) 70%);color:#fff;min-height:640px;display:flex;align-items:center}.hero:after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(93,154,192,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(93,154,192,.05) 1px,transparent 1px);background-size:56px 56px;mask-image:linear-gradient(90deg,transparent 20%,#000 100%);pointer-events:none}.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:38px;align-items:center;padding:75px 0}.eyebrow{display:flex;align-items:center;gap:10px;color:var(--cyan);font-size:11px;font-weight:850;letter-spacing:.18em;text-transform:uppercase}.eyebrow:before{content:"";width:25px;height:2px;background:currentColor}.hero h1{font-size:clamp(45px,6.4vw,78px);line-height:.99;letter-spacing:-.055em;margin:20px 0 23px}.hero h1 em{font-style:normal;color:var(--cyan)}.hero p{max-width:520px;color:#c4d0dc;line-height:1.75;font-size:16px;margin:0 0 29px}.heroactions{display:flex;align-items:center;gap:20px;flex-wrap:wrap}.textlink{font-size:12px;font-weight:750;color:#e3edf6}.textlink span{color:var(--cyan);margin-left:5px}.hero-proof{display:flex;gap:23px;margin-top:45px;color:#b6c3d0;font-size:10px;letter-spacing:.1em;text-transform:uppercase}.hero-proof span{display:flex;align-items:center;gap:8px}.dot{width:7px;height:7px;border-radius:50%;background:var(--orange);box-shadow:0 0 12px rgba(255,120,79,.7)}
-    .tech-art{height:435px;position:relative;display:grid;place-items:center}.orbit{position:absolute;border:1px solid rgba(53,210,229,.22);border-radius:50%;width:370px;height:370px}.orbit:before,.orbit:after{content:"";position:absolute;border:1px solid rgba(53,210,229,.17);border-radius:50%;inset:35px}.orbit:after{inset:78px}.core{width:155px;height:155px;display:grid;place-items:center;border-radius:36px;transform:rotate(45deg);background:linear-gradient(145deg,#1c4063,#10213a);border:1px solid rgba(53,210,229,.4);box-shadow:0 0 80px rgba(53,210,229,.2),inset 0 0 35px rgba(53,210,229,.1)}.core svg{transform:rotate(-45deg);width:76px;height:76px}.node{position:absolute;display:grid;place-items:center;width:76px;height:76px;border-radius:21px;background:#152a43;border:1px solid rgba(255,255,255,.16);box-shadow:0 16px 34px rgba(0,0,0,.25);color:var(--cyan)}.node svg{width:30px;height:30px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.node.n1{top:34px;left:50%}.node.n2{right:2px;top:45%}.node.n3{bottom:26px;left:48%}.node.n4{left:0;top:43%}.signal{position:absolute;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);opacity:.55;transform-origin:left}.signal.s1{width:125px;top:97px;left:57%}.signal.s2{width:125px;top:52%;left:66%;transform:rotate(56deg)}.signal.s3{width:130px;top:80%;left:55%;transform:rotate(165deg)}.signal.s4{width:128px;top:50%;left:18%;transform:rotate(-35deg)}
-    .intro{padding:82px 0}.introgrid{display:grid;grid-template-columns:.9fr 1.1fr;gap:65px;align-items:start}.intro h2,.sectionhead h2{font-size:clamp(34px,4vw,50px);line-height:1.06;letter-spacing:-.045em;margin:15px 0}.introcopy{font-size:16px;line-height:1.85;color:#56667a}.introcopy strong{color:var(--ink)}
-    .services{background:#e8eef3;padding:82px 0 90px}.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:35px;margin-bottom:38px}.sectionhead p{max-width:405px;color:#5f6e80;line-height:1.7;margin:0}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{position:relative;overflow:hidden;background:#fff;border:1px solid #dce4eb;border-radius:7px;padding:25px 24px 27px;min-height:230px;box-shadow:0 9px 26px rgba(18,45,70,.035);transition:.22s}.card:hover{transform:translateY(-4px);box-shadow:0 16px 35px rgba(18,45,70,.1);border-color:#a9dfe6}.icon{width:45px;height:45px;display:grid;place-items:center;background:#e4f8fa;border-radius:11px;color:#07889a}.icon svg{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.card h3{margin:19px 0 9px;font-size:18px;letter-spacing:-.02em}.card p{margin:0;color:#617084;font-size:13px;line-height:1.65}.card .arrow{position:absolute;right:22px;top:34px;color:#91a2b3;font-size:18px}
-    .gallery{padding:78px 0;background:#fff}.gallerygrid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.gallery figure{margin:0;position:relative;overflow:hidden;min-height:220px;border-radius:6px;background:#d8e0e8}.gallery img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s}.gallery figure:hover img{transform:scale(1.04)}.gallery figure:after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(transparent,rgba(7,13,24,.82))}.gallery figcaption{position:absolute;z-index:1;left:15px;bottom:15px;color:#fff;font-size:12px;font-weight:800;letter-spacing:.04em}.gallery figcaption small{display:block;color:#c4d0dc;font-size:10px;font-weight:500;margin-top:4px}.gallery .sectionhead{margin-bottom:29px}.feature{padding:85px 0;background:var(--navy);color:#fff}.featuregrid{display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:center}.feature h2{font-size:clamp(34px,4.5vw,54px);line-height:1.04;letter-spacing:-.05em;margin:17px 0}.feature p{color:#bac8d8;line-height:1.75}.checks{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}.check{display:flex;gap:10px;align-items:flex-start;color:#e3ebf3;font-size:13px;line-height:1.5}.check i{font-style:normal;flex:none;width:20px;height:20px;display:grid;place-items:center;border-radius:50%;background:rgba(53,210,229,.15);color:var(--cyan);font-size:12px}.panel{min-height:350px;border-radius:9px;background:linear-gradient(145deg,#173653,#10213a);border:1px solid rgba(255,255,255,.1);position:relative;overflow:hidden;padding:28px;display:flex;align-items:end}.panel:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 55% 40%,rgba(53,210,229,.18),transparent 44%),linear-gradient(135deg,transparent 40%,rgba(255,120,79,.09))}.panelgrid{position:absolute;inset:0;background-image:linear-gradient(rgba(190,229,244,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(190,229,244,.045) 1px,transparent 1px);background-size:32px 32px;mask-image:linear-gradient(135deg,#000,transparent 80%)}.panelcontent{position:relative;z-index:1}.paneltag{display:inline-block;color:var(--cyan);border:1px solid rgba(53,210,229,.35);padding:8px 11px;border-radius:3px;font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.panelcontent h3{font-size:25px;max-width:330px;margin:15px 0 8px}.panelcontent p{font-size:13px;margin:0;max-width:355px}
-    .steps{padding:83px 0}.stepgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}.step{border-top:2px solid #d3dfe6;padding-top:18px}.step b{color:#0794a5;font-size:11px;letter-spacing:.16em}.step h3{margin:14px 0 8px;font-size:18px}.step p{font-size:13px;line-height:1.65;color:#647286;margin:0}
-    .cta{background:linear-gradient(105deg,#142a45,#102039);color:#fff;padding:58px 0}.ctain{display:flex;justify-content:space-between;align-items:center;gap:30px}.cta h2{font-size:clamp(28px,4vw,42px);line-height:1.06;letter-spacing:-.04em;margin:0 0 9px}.cta p{color:#c2cfdb;margin:0;font-size:14px;line-height:1.6}.contact{padding:78px 0;background:#e8eef3}.contactgrid{display:grid;grid-template-columns:1fr .8fr;gap:65px;align-items:center}.contact h2{font-size:clamp(38px,5vw,56px);line-height:.98;letter-spacing:-.05em;margin:17px 0}.contact p{color:#5b6a7c;line-height:1.75;max-width:470px}.contactbox{background:white;border-radius:7px;padding:27px;border-top:3px solid var(--orange)}.contactbox h3{margin:0 0 10px;font-size:19px}.contactbox p{font-size:13px;margin:0 0 17px}.contactbox .pill{width:100%}.note{font-size:10px!important;color:#778597!important;margin:13px 0 0!important}.footer{background:#070d18;color:#aebdca;padding:24px 0;font-size:11px}.footerin{display:flex;justify-content:space-between;align-items:center;gap:20px}.footer .brandmark{width:42px;height:42px}
-    @media(max-width:850px){.links{gap:15px}.links a:nth-child(2){display:none}.hero .wrap{grid-template-columns:1fr .8fr;gap:5px}.tech-art{transform:scale(.85)}.introgrid,.featuregrid,.contactgrid{grid-template-columns:1fr;gap:30px}.sectionhead{align-items:start;flex-direction:column}.cards{grid-template-columns:repeat(2,1fr)}.panel{min-height:280px}.gallerygrid{grid-template-columns:repeat(2,1fr)}.gallery figure{min-height:185px}.ctain{align-items:flex-start;flex-direction:column}}
-    @media(max-width:560px){.wrap{width:calc(100% - 34px)}.top .wrap span:last-child{display:none}.navin{height:70px}.brandmark{width:45px;height:45px}.brandtype b{font-size:20px}.brandtype small{font-size:7px}.brand b{font-size:18px}.links{gap:0}.links a:not(.pill){display:none}.links .pill{font-size:9px;padding:11px 12px}.hero{min-height:auto}.hero .wrap{display:block;padding:73px 0 36px}.hero h1{font-size:51px}.hero p{font-size:15px}.hero-proof{gap:11px;flex-direction:column;margin-top:30px}.tech-art{height:295px;transform:scale(.7);transform-origin:top center;margin-top:20px;margin-bottom:-60px}.intro,.services,.feature,.steps,.contact{padding:62px 0}.introgrid{gap:15px}.cards{grid-template-columns:1fr}.card{min-height:205px}.gallerygrid{gap:9px}.gallery figure{min-height:150px}.gallery{padding:60px 0}.checks{grid-template-columns:1fr}.stepgrid{grid-template-columns:1fr;gap:20px}.cta{padding:45px 0}.footerin{align-items:flex-start;flex-direction:column}}
-  </style>
-</head>
-<body>
-  <div class="top"><div class="wrap"><span>Soluciones en seguridad y tecnología</span><span><strong>Instalación</strong> · configuración · mantenimiento</span></div></div>
-  <header class="nav"><div class="wrap navin"><a class="brand" href="#inicio"><svg class="brandmark" viewBox="0 0 64 64" aria-hidden="true"><rect x="2" y="2" width="60" height="60" rx="16" fill="#132943" stroke="#35d2e5" stroke-width="2"/><path d="M34 11 15 37h15l-4 17 24-32H34l3-11Z" fill="#ff784f"/></svg><span class="brandtype"><b>INTEX</b><small>SEGURIDAD · ELECTRICIDAD · CONECTIVIDAD</small></span></a><nav class="links" aria-label="Navegación"><a href="#servicios">Servicios</a><a href="#soluciones">Soluciones</a><a href="#proceso">Cómo trabajamos</a><a class="pill" href="#contacto">Consultar <span>↗</span></a></nav></div></header>
-  <main>
-    <section class="hero" id="inicio"><div class="wrap"><div><div class="eyebrow">Protección y conectividad</div><h1>Tu espacio,<br>más <em>seguro.</em></h1><p>Instalamos tecnología que te ayuda a cuidar, comunicar y controlar. Alarmas, cámaras, telefonía, electricidad para hogares, comercios e industrias.</p><div class="heroactions"><a class="pill" href="#contacto">Hablemos de tu instalación <span>↗</span></a><a class="textlink" href="#servicios">Ver servicios <span>↓</span></a></div><div class="hero-proof"><span><i class="dot"></i> Soluciones a medida</span><span><i class="dot"></i> Instalación y puesta en marcha</span><span><i class="dot"></i> Atención para empresas y hogares</span></div></div>
-      <div class="tech-art" aria-hidden="true"><div class="orbit"></div><i class="signal s1"></i><i class="signal s2"></i><i class="signal s3"></i><i class="signal s4"></i><div class="core"><svg viewBox="0 0 80 80" fill="none"><path d="M40 8 65 18v19c0 17-10 28-25 36C25 65 15 54 15 37V18L40 8Z" stroke="#35d2e5" stroke-width="3"/><path d="m29 40 7 7 16-17" stroke="#ff784f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="node n1"><svg viewBox="0 0 32 32"><path d="M6 15v-3a10 10 0 0 1 20 0v3M6 15h4v9H8a2 2 0 0 1-2-2v-7Zm20 0h-4v9h2a2 2 0 0 0 2-2v-7ZM22 25c-1 2-3 3-6 3"/></svg></div><div class="node n2"><svg viewBox="0 0 32 32"><path d="M5 13a16 16 0 0 1 22 0M9 17a10 10 0 0 1 14 0m-10 4a4 4 0 0 1 6 0M16 25h.01"/></svg></div><div class="node n3"><svg viewBox="0 0 32 32"><path d="M10 14h12a4 4 0 0 1 4 4v8H6v-8a4 4 0 0 1 4-4ZM12 14V9a4 4 0 1 1 8 0v5M10 20h.01M22 20h.01"/></svg></div><div class="node n4"><svg viewBox="0 0 32 32"><path d="M12 3 5 17h9l-2 12 15-17h-9l2-9h-8Z"/></svg></div></div>
-    </div></section>
-    <section class="intro"><div class="wrap introgrid"><div><div class="eyebrow" style="color:#078b9b">Quiénes somos</div><h2>Conectamos tus ideas con soluciones concretas.</h2></div><div class="introcopy"><p><strong>Intex</strong> brinda servicios de instalación y soporte en seguridad electrónica, comunicaciones e infraestructura eléctrica. Nos ocupamos de entender el espacio y el uso para proponer un sistema claro, bien integrado y preparado para el día a día.</p><p>Desde una cámara o una alarma hasta instalaciones completas: coordinamos los trabajos y dejamos cada sistema configurado para que puedas usarlo con confianza.</p></div></div></section>
-    <section class="services" id="servicios"><div class="wrap"><div class="sectionhead"><div><div class="eyebrow" style="color:#078b9b">Servicios</div><h2>Tecnología que trabaja<br>para vos.</h2></div><p>Un solo equipo para planificar, instalar y poner en marcha sistemas que mejoran la seguridad, la comunicación y el funcionamiento de tus espacios.</p></div><div class="cards">
-      <article class="card"><span class="icon"><svg viewBox="0 0 32 32"><path d="M16 4 26 8v7c0 7-4 11-10 14C10 26 6 22 6 15V8l10-4Z"/><path d="M12 16h8m-4-4v8"/></svg></span><span class="arrow">↗</span><h3>Alarmas</h3><p>Sistemas de alarma para viviendas, comercios y espacios de trabajo. Instalación, configuración y asesoramiento según cada necesidad.</p></article>
-      <article class="card"><span class="icon"><svg viewBox="0 0 32 32"><path d="M4 11 16 5l12 6-12 6-12-6Z"/><path d="M7 14v8l9 5 9-5v-8M16 17v10M25 19l4 2v-8l-4-2"/></svg></span><span class="arrow">↗</span><h3>Cámaras de vigilancia</h3><p>Instalación de cámaras y sistemas de videovigilancia para observar y registrar lo que sucede en tus instalaciones.</p></article>
-      <article class="card"><span class="icon"><svg viewBox="0 0 32 32"><path d="M10 4h12v24H10zM13 8h6m-6 4h6m-6 4h2m3 0h1M14 24h4"/><path d="M6 8H4v16h2m22-16h-2v16h2"/></svg></span><span class="arrow">↗</span><h3>Telefonía y redes</h3><p>Instalación y organización de telefonía, cableado estructurado y conectividad para hogares, oficinas y comercios.</p></article>
-      <article class="card"><span class="icon"><svg viewBox="0 0 32 32"><path d="M18 3 7 18h8l-1 11 11-16h-8l1-10Z"/></svg></span><span class="arrow">↗</span><h3>Instalaciones eléctricas</h3><p>Trabajos eléctricos, tendido y adecuación de circuitos, tableros y puntos de conexión para nuevas instalaciones o reformas.</p></article>
+ <html lang = "es">
+     <head>
+     <meta charset = "utf-8">
+     <meta name = "viewport" content = "width=device-width, initial-scale=1">
+     <meta name = "theme-color" content = "#0b1424">
+     <meta name = "description" content = "Intex: instalación de alarmas, cámaras de vigilancia, telefonía, redes e instalaciones eléctricas." />
+     <title> Intex-Seguridad | Seguridad, tecnología e instalaciones </title>
+ <style>
+:root {
+    --navy:#0b1424;
+    --navy2:#111f34;
+    --blue:#1c3657;
+    --cyan:#35d2e5;
+    --orange:#ff784f;
+    --paper:#f4f7fa;
+    --ink:#101b2a;
+    --muted:#617084;
+    --white:#fff;
+    --line:rgba(255, 255, 255, .14);
+    --max: 1160px
+}
+ * {
+    box-sizing:border-box
+}
+html {
+    scroll-behavior:smooth
+}
+body {
+    margin: 0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    sans-serif
+}
+a {
+    color:inherit;
+    text-decoration:none
+}
+.wrap {
+    width:min(var(--max), calc(100%  - 48px));
+    margin:auto
+}
+.top {
+    background:#070d18;
+    color:#c6d2df;
+    font-size: 13px;
+    font-weight: 750;
+    letter-spacing: .13em;
+    text-transform:uppercase
+}
+.top .wrap span:first-child {
+    font-size: 14px;
+    font-weight: 850;
+    color:#fff
+}
+.top .wrap span:last-child {
+    font-size: 12px;
+    font-weight: 750
+}
+.top .wrap {
+    display:flex;
+    justify-content:space-between;
+    padding: 11px 0
+}
+.top strong {
+    color:var(--cyan)
+}
+.nav {
+    background:var(--navy);
+    color:#fff;
+    border-bottom: 1px solid var(--line)
+}
+.navin {
+    height: 82px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between
+}
+.brand {
+    display:flex;
+    align-items:center;
+    gap: 12px
+}
+.brandmark {
+    width: 52px;
+    height: 52px;
+    display:block;
+    flex:none
+}
+.brandtype b {
+    display:block;
+    color:#fff;
+    font-size: 24px;
+    letter-spacing: .16em;
+    font-weight: 900
+}
+.brand-accent {
+    color:var(--cyan);
+    text-shadow:0 0 8px rgba(53,210,229,.72), 0 0 20px rgba(53,210,229,.38)
+}
+.brandmark {
+    filter:drop-shadow(0 0 7px rgba(53,210,229,.42));
+    animation:intex-logo-glow 3.4s ease-in-out infinite;
+    transition:filter .25s ease, transform .25s ease
+}
+.brand:hover .brandmark {
+    filter:drop-shadow(0 0 12px rgba(53,210,229,.78)) drop-shadow(0 0 24px rgba(53,210,229,.34));
+    transform:translateY(-1px)
+}
+.brandtype b {
+    text-shadow:0 0 14px rgba(53,210,229,.16)
+}
+@keyframes intex-logo-glow {
+    0%,100% { filter:drop-shadow(0 0 5px rgba(53,210,229,.32)) }
+    50% { filter:drop-shadow(0 0 12px rgba(53,210,229,.76)) drop-shadow(0 0 20px rgba(53,210,229,.28)) }
+}.brandtype small {
+    display:block;
+    color:#aebdca;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: .11em;
+    margin-top: 4px
+}
+.footer .brandtype b {
+    font-size: 19px
+}
+.brand b {
+    font-size: 21px;
+    letter-spacing: .12em;
+    font-weight: 900
+}
+.brand small {
+    display:block;
+    color:#9eafc2;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .18em;
+    margin-top: 4px
+}
+.links {
+    display:flex;
+    align-items:center;
+    gap: 27px;
+    font-size: 13px;
+    color:#e4edf5
+}
+.links a:hover {
+    color:var(--cyan)
+}
+.pill {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap: 9px;
+    border-radius: 5px;
+    padding: 13px 19px;
+    background:var(--orange);
+    color:#20130f;
+    font-size: 12px;
+    font-weight: 850;
+    letter-spacing: .055em;
+    text-transform:uppercase;
+    box-shadow: 0 8px 24px rgba(255, 120, 79, .18);
+    transition: .2s
+}
+.pill:hover {
+    transform:translateY(-2px);
+    background:#ff9271
+}
+.hero {
+    position:relative;
+    overflow:hidden;
+    background:radial-gradient(ellipse at 77% 50% , #1c3b5b 0, #132742 30% , var(--navy)70% );
+    color:#fff;
+    min-height: 640px;
+    display:flex;
+    align-items:center
+}
+.hero:after {
+    content: "";
+    position:absolute;
+    inset: 0;
+    background-image:linear-gradient(rgba(93, 154, 192, .05)1px, transparent 1px),
+    linear-gradient(90deg, rgba(93, 154, 192, .05)1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image:linear-gradient(90deg, transparent 20% , #000 100% );
+    pointer-events:none
+}
+.hero .wrap {
+    position:relative;
+    z-index: 1;
+    display:grid;
+    grid-template-columns: 1.05fr.95fr;
+    gap: 38px;
+    align-items:center;
+    padding: 75px 0
+}
+.eyebrow {
+    display:flex;
+    align-items:center;
+    gap: 10px;
+    color:var(--cyan);
+    font-size: 11px;
+    font-weight: 850;
+    letter-spacing: .18em;
+    text-transform:uppercase
+}
+.eyebrow:before {
+    content: "";
+    width: 25px;
+    height: 2px;
+    background:currentColor
+}
+.hero h1 {
+    font-size:clamp(38px, 5.2vw, 64px);
+    line-height: 1;
+    letter-spacing:  - .05em;
+    margin: 20px 0 23px
+}
+.hero h1 em {
+    font-style:normal;
+    color:var(--cyan)
+}
+.hero p {
+    max-width: 520px;
+    color:#c4d0dc;
+    line-height: 1.75;
+    font-size: 16px;
+    margin: 0 0 29px
+}
+.heroactions {
+    display:flex;
+    align-items:center;
+    gap: 20px;
+    flex-wrap:wrap
+}
+.textlink {
+    font-size: 12px;
+    font-weight: 750;
+    color:#e3edf6
+}
+.textlink span {
+    color:var(--cyan);
+    margin-left: 5px
+}
+.hero-proof {
+    display:flex;
+    gap: 23px;
+    margin-top: 45px;
+    color:#b6c3d0;
+    font-size: 10px;
+    letter-spacing: .1em;
+    text-transform:uppercase
+}
+.hero-proof span {
+    display:flex;
+    align-items:center;
+    gap: 8px
+}
+.dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50% ;
+    background:var(--orange);
+    box-shadow: 0 0 12px rgba(255, 120, 79, .7)
+}
+.tech-art {
+    height: 435px;
+    position:relative;
+    display:grid;
+    place-items:center
+}
+.orbit {
+    position:absolute;
+    border: 1px solid rgba(53, 210, 229, .22);
+    border-radius: 50% ;
+    width: 370px;
+    height: 370px
+}
+.orbit:before, .orbit:after {
+    content: "";
+    position:absolute;
+    border: 1px solid rgba(53, 210, 229, .17);
+    border-radius: 50% ;
+    inset: 35px
+}
+.orbit:after {
+    inset: 78px
+}
+.core {
+    width: 155px;
+    height: 155px;
+    display:grid;
+    place-items:center;
+    border-radius: 36px;
+    transform:rotate(45deg);
+    background:linear-gradient(145deg, #1c4063, #10213a);
+    border: 1px solid rgba(53, 210, 229, .4);
+    box-shadow: 0 0 80px rgba(53, 210, 229, .2),
+    inset 0 0 35px rgba(53, 210, 229, .1)
+}
+.core svg {
+    transform:rotate(-45deg);
+    width: 76px;
+    height: 76px
+}
+.node {
+    position:absolute;
+    display:grid;
+    place-items:center;
+    width: 76px;
+    height: 76px;
+    border-radius: 21px;
+    background:#152a43;
+    border: 1px solid rgba(255, 255, 255, .16);
+    box-shadow: 0 16px 34px rgba(0, 0, 0, .25);
+    color:var(--cyan)
+}
+.node svg {
+    width: 30px;
+    height: 30px;
+    stroke:currentColor;
+    fill:none;
+    stroke-width: 1.7;
+    stroke-linecap:round;
+    stroke-linejoin:round
+}
+.node.n1 {
+    left: 50% ;
+    top: 50% ;
+    transform:translate(-50% , -50% )translateY(-145px)
+}
+.node.n2 {
+    left: 50% ;
+    top: 50% ;
+    transform:translate(-50% , -50% )translateX(145px)
+}
+.node.n3 {
+    left: 50% ;
+    top: 50% ;
+    transform:translate(-50% , -50% )translateY(145px)
+}
+.node.n4 {
+    left: 50% ;
+    top: 50% ;
+    transform:translate(-50% , -50% )translateX(-145px)
+}
+.signal {
+    position:absolute;
+    height: 1px;
+    background:linear-gradient(90deg, transparent, var(--cyan), transparent);
+    opacity: .55;
+    transform-origin:left
+}
+.signal.s1 {
+    width: 125px;
+    top: 97px;
+    left: 57%
+}
+.signal.s2 {
+    width: 125px;
+    top: 52% ;
+    left: 66% ;
+    transform:rotate(56deg)
+}
+.signal.s3 {
+    width: 130px;
+    top: 80% ;
+    left: 55% ;
+    transform:rotate(165deg)
+}
+.signal.s4 {
+    width: 128px;
+    top: 50% ;
+    left: 18% ;
+    transform:rotate(-35deg)
+}
+@keyframes intex-orbit-spin { to { transform:rotate(1turn) } }
+@keyframes intex-core-pulse {
+  0%,100% { box-shadow:0 0 66px rgba(53,210,229,.28), inset 0 0 32px rgba(53,210,229,.14); border-color:rgba(53,210,229,.55) }
+  50% { box-shadow:0 0 132px rgba(53,210,229,.72), inset 0 0 52px rgba(53,210,229,.3); border-color:rgba(53,210,229,.95) }
+}
+@keyframes intex-ring-breathe {
+  0%,100% { opacity:.62; filter:drop-shadow(0 0 5px rgba(53,210,229,.36)) }
+  50% { opacity:1; filter:drop-shadow(0 0 13px rgba(53,210,229,.9)) }
+}
+@keyframes intex-node-pulse {
+  0%,100% { box-shadow:0 16px 34px rgba(0,0,0,.25), 0 0 8px rgba(53,210,229,.12); border-color:rgba(255,255,255,.24) }
+  50% { box-shadow:0 16px 34px rgba(0,0,0,.25), 0 0 36px rgba(53,210,229,.58); border-color:rgba(53,210,229,.92) }
+}
+.tech-art:before {
+  content:"";
+  position:absolute;
+  width:370px;
+  height:370px;
+  border-radius:50%;
+  background:conic-gradient(from 0deg, transparent 0 76%, rgba(53,210,229,.16) 82%, rgba(53,210,229,1) 89%, rgba(255,120,79,.55) 91%, transparent 97%);
+  -webkit-mask:radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2px));
+  mask:radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2px));
+  animation:intex-orbit-spin 9s linear infinite;
+  pointer-events:none
+}
+.core { animation:intex-core-pulse 3s ease-in-out infinite }
+.core svg { filter:drop-shadow(0 0 8px rgba(255,120,79,.6)) drop-shadow(0 0 14px rgba(53,210,229,.62)) }
+.orbit:before { animation:intex-ring-breathe 4s ease-in-out infinite }
+.orbit:after { animation:intex-ring-breathe 4s ease-in-out .8s infinite }
+.node { animation:intex-node-pulse 3.2s ease-in-out infinite }
+.node.n2 { animation-delay:.5s }
+.node.n3 { animation-delay:1s }
+.node.n4 { animation-delay:1.5s }
+@media (prefers-reduced-motion:reduce) {
+  .tech-art:before,.core,.orbit:before,.orbit:after,.node,.brandmark { animation:none !important }
+}.intro {
+    padding: 82px 0
+}
+.introgrid {
+    display:grid;
+    grid-template-columns: .9fr 1.1fr;
+    gap: 65px;
+    align-items:start
+}
+.intro h2, .sectionhead h2 {
+    font-size:clamp(34px, 4vw, 50px);
+    line-height: 1.06;
+    letter-spacing:  - .045em;
+    margin: 15px 0
+}
+.introcopy {
+    font-size: 16px;
+    line-height: 1.85;
+    color:#56667a
+}
+.introcopy strong {
+    color:var(--ink)
+}
+.services {
+    background:#e8eef3;
+    padding: 82px 0 90px
+}
+.sectionhead {
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    gap: 35px;
+    margin-bottom: 38px
+}
+.sectionhead p {
+    max-width: 405px;
+    color:#5f6e80;
+    line-height: 1.7;
+    margin: 0
+}
+.cards {
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap: 14px
+}
+.card {
+    position:relative;
+    overflow:hidden;
+    background:#fff;
+    border: 1px solid #dce4eb;
+    border-radius: 7px;
+    padding: 25px 24px 27px;
+    min-height: 230px;
+    box-shadow: 0 9px 26px rgba(18, 45, 70, .035);
+    transition: .22s
+}
+.card:hover {
+    transform:translateY(-4px);
+    box-shadow: 0 16px 35px rgba(18, 45, 70, .1);
+    border-color:#a9dfe6
+}
+.icon {
+    width: 45px;
+    height: 45px;
+    display:grid;
+    place-items:center;
+    background:#e4f8fa;
+    border-radius: 11px;
+    color:#07889a
+}
+.icon svg {
+    width: 25px;
+    height: 25px;
+    fill:none;
+    stroke:currentColor;
+    stroke-width: 1.8;
+    stroke-linecap:round;
+    stroke-linejoin:round
+}
+.card h3 {
+    margin: 19px 0 9px;
+    font-size: 18px;
+    letter-spacing:  - .02em
+}
+.card p {
+    margin: 0;
+    color:#617084;
+    font-size: 13px;
+    line-height: 1.65
+}
+.card .arrow {
+    position:absolute;
+    right: 22px;
+    top: 34px;
+    color:#91a2b3;
+    font-size: 18px
+}
+.gallery {
+    padding: 78px 0;
+    background:#fff
+}
+.gallerygrid {
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap: 13px
+}
+.gallery figure {
+    margin: 0;
+    position:relative;
+    overflow:hidden;
+    min-height: 220px;
+    border-radius: 6px;
+    background:#d8e0e8
+}
+.gallery img {
+    position:absolute;
+    inset: 0;
+    width: 100% ;
+    height: 100% ;
+    object-fit:cover;
+    transition:transform.4s
+}
+.gallery figure:hover img {
+    transform:scale(1.04)
+}
+.gallery figure:after {
+    content: "";
+    position:absolute;
+    inset: 35% 0 0;
+    background:linear-gradient(transparent, rgba(7, 13, 24, .82))
+}
+.gallery figcaption {
+    position:absolute;
+    z-index: 1;
+    left: 15px;
+    bottom: 15px;
+    color:#fff;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .04em
+}
+.gallery figcaption small {
+    display:block;
+    color:#c4d0dc;
+    font-size: 10px;
+    font-weight: 500;
+    margin-top: 4px
+}
+.gallery .sectionhead {
+    margin-bottom: 29px
+}
+.feature {
+    padding: 85px 0;
+    background:var(--navy);
+    color:#fff
+}
+.featuregrid {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 65px;
+    align-items:center
+}
+.feature h2 {
+    font-size:clamp(34px, 4.5vw, 54px);
+    line-height: 1.04;
+    letter-spacing:  - .05em;
+    margin: 17px 0
+}
+.feature p {
+    color:#bac8d8;
+    line-height: 1.75
+}
+.checks {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 28px
+}
+.check {
+    display:flex;
+    gap: 10px;
+    align-items:flex-start;
+    color:#e3ebf3;
+    font-size: 13px;
+    line-height: 1.5
+}
+.check i {
+    font-style:normal;
+    flex:none;
+    width: 20px;
+    height: 20px;
+    display:grid;
+    place-items:center;
+    border-radius: 50% ;
+    background:rgba(53, 210, 229, .15);
+    color:var(--cyan);
+    font-size: 12px
+}
+.panel {
+    min-height: 350px;
+    border-radius: 9px;
+    background:linear-gradient(145deg, #173653, #10213a);
+    border: 1px solid rgba(255, 255, 255, .1);
+    position:relative;
+    overflow:hidden;
+    padding: 28px;
+    display:flex;
+    align-items:end
+}
+.panel:before {
+    content: "";
+    position:absolute;
+    inset: 0;
+    background:radial-gradient(circle at 55% 40% , rgba(53, 210, 229, .18), transparent 44% ),
+    linear-gradient(135deg, transparent 40% , rgba(255, 120, 79, .09))
+}
+.panelgrid {
+    position:absolute;
+    inset: 0;
+    background-image:linear-gradient(rgba(190, 229, 244, .045)1px, transparent 1px),
+    linear-gradient(90deg, rgba(190, 229, 244, .045)1px, transparent 1px);
+    background-size: 32px 32px;
+    mask-image:linear-gradient(135deg, #000, transparent 80% )
+}
+.panelcontent {
+    position:relative;
+    z-index: 1
+}
+.paneltag {
+    display:inline-block;
+    color:var(--cyan);
+    border: 1px solid rgba(53, 210, 229, .35);
+    padding: 8px 11px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .14em;
+    text-transform:uppercase
+}
+.panelcontent h3 {
+    font-size: 25px;
+    max-width: 330px;
+    margin: 15px 0 8px
+}
+.panelcontent p {
+    font-size: 13px;
+    margin: 0;
+    max-width: 355px
+}
+.steps {
+    padding: 83px 0
+}
+.stepgrid {
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap: 25px
+}
+.step {
+    border-top: 2px solid #d3dfe6;
+    padding-top: 18px
+}
+.step b {
+    color:#0794a5;
+    font-size: 11px;
+    letter-spacing: .16em
+}
+.step h3 {
+    margin: 14px 0 8px;
+    font-size: 18px
+}
+.step p {
+    font-size: 13px;
+    line-height: 1.65;
+    color:#647286;
+    margin: 0
+}
+.cta {
+    background:linear-gradient(105deg, #142a45, #102039);
+    color:#fff;
+    padding: 58px 0
+}
+.ctain {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap: 30px
+}
+.cta h2 {
+    font-size:clamp(28px, 4vw, 42px);
+    line-height: 1.06;
+    letter-spacing:  - .04em;
+    margin: 0 0 9px
+}
+.cta p {
+    color:#c2cfdb;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6
+}
+.contact {
+    padding: 78px 0;
+    background:#e8eef3
+}
+.contactgrid {
+    display:grid;
+    grid-template-columns: 1fr.8fr;
+    gap: 65px;
+    align-items:center
+}
+.contact h2 {
+    font-size:clamp(38px, 5vw, 56px);
+    line-height: .98;
+    letter-spacing:  - .05em;
+    margin: 17px 0
+}
+.contact p {
+    color:#5b6a7c;
+    line-height: 1.75;
+    max-width: 470px
+}
+.contactbox {
+    background:white;
+    border-radius: 7px;
+    padding: 27px;
+    border-top: 3px solid var(--orange)
+}
+.contactbox h3 {
+    margin: 0 0 10px;
+    font-size: 19px
+}
+.contactbox p {
+    font-size: 13px;
+    margin: 0 0 17px
+}
+.contactbox .pill {
+    width: 100%
+}
+.contactdetails {
+    display:grid;
+    gap: 12px;
+    margin-top: 20px;
+    padding-top: 17px;
+    border-top: 1px solid #e2e9ef
+}
+.contactdetails a {
+    display:flex;
+    flex-direction:column;
+    gap: 4px
+}
+.contactdetails span {
+    color:#078b9b;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform:uppercase
+}
+.contactdetails strong {
+    font-size: 13px;
+    color:var(--ink);
+    overflow-wrap:anywhere
+}
+.contactdetails a:hover strong {
+    color:#078b9b
+}
+.note {
+    font-size: 10px!important;
+    color:#778597!important;
+    margin: 13px 0 0!important
+}
+.footer {
+    background:#070d18;
+    color:#aebdca;
+    padding: 24px 0;
+    font-size: 11px
+}
+.footerin {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap: 20px
+}
+.footer .brandmark {
+    width: 42px;
+    height: 42px
+}@media(max-width: 850px) {
+    .links {
+        gap: 15px
+    }
+    .links a:nth-child(2) {
+        display:none
+    }
+    .hero .wrap {
+        grid-template-columns: 1fr.8fr;
+        gap: 5px
+    }
+    .tech-art {
+        transform:scale(.85)
+    }
+    .introgrid,
+    .featuregrid,
+    .contactgrid {
+        grid-template-columns: 1fr;
+        gap: 30px
+    }
+    .sectionhead {
+        align-items:start;
+        flex-direction:column
+    }
+    .cards {
+        grid-template-columns:repeat(2, 1fr)
+    }
+    .panel {
+        min-height: 280px
+    }
+    .gallerygrid {
+        grid-template-columns:repeat(2, 1fr)
+    }
+    .gallery figure {
+        min-height: 185px
+    }
+    .ctain {
+        align-items:flex-start;
+        flex-direction:column
+    }
+}@media(max-width: 560px) {
+    .wrap {
+        width:calc(100%  - 34px)
+    }
+    .top .wrap span:last-child {
+        display:none
+    }
+    .navin {
+        height: 70px
+    }
+    .brandmark {
+        width: 45px;
+        height: 45px
+    }
+    .brandtype b {
+        font-size: 20px
+    }
+    .brandtype small {
+        font-size: 7px
+    }
+    .brand b {
+        font-size: 18px
+    }
+    .links {
+        gap: 0
+    }
+    .links a:not(.pill) {
+        display:none
+    }
+    .links .pill {
+        font-size: 9px;
+        padding: 11px 12px
+    }
+    .hero {
+        min-height:auto
+    }
+    .hero .wrap {
+        display:block;
+        padding: 73px 0 36px
+    }
+    .hero h1 {
+        font-size: 42px
+    }
+    .hero p {
+        font-size: 15px
+    }
+    .hero-proof {
+        gap: 11px;
+        flex-direction:column;
+        margin-top: 30px
+    }
+    .tech-art {
+        height: 295px;
+        transform:scale(.7);
+        transform-origin:top center;
+        margin-top: 20px;
+        margin-bottom: -60px
+    }
+    .intro,
+    .services,
+    .feature,
+    .steps,
+    .contact {
+        padding: 62px 0
+    }
+    .introgrid {
+        gap: 15px
+    }
+    .cards {
+        grid-template-columns: 1fr
+    }
+    .card {
+        min-height: 205px
+    }
+    .gallerygrid {
+        gap: 9px
+    }
+    .gallery figure {
+        min-height: 150px
+    }
+    .gallery {
+        padding: 60px 0
+    }
+    .checks {
+        grid-template-columns: 1fr
+    }
+    .stepgrid {
+        grid-template-columns: 1fr;
+        gap: 20px
+    }
+    .cta {
+        padding: 45px 0
+    }
+    .footerin {
+        align-items:flex-start;
+        flex-direction:column
+    }
+}
+ </style>
+ </head>
+ <body>
+ <div class = "top">  <div class = "wrap">  <span> Soluciones en seguridad y tecnología </span>  <span>  <strong> Instalación · configuración · mantenimiento </strong> </span>  </div>  </div>
+     <header class = "nav">  <div class = "wrap navin">  <a class = "brand" href = "#inicio">  <svg class = "brandmark" viewBox = "0 0 64 64" aria-hidden = "true">  <rect x = "2" y = "2" width = "60" height = "60" rx = "16" fill = "#132943" stroke = "#35d2e5" stroke-width = "2" />  <path d = "M34 11 15 37h15l-4 17 24-32H34l3-11Z" fill = "#ff784f" />  </svg>  <span class = "brandtype">  <b>INTEX<span class="brand-accent">-SEGURIDAD</span></b>  <small> SEGURIDAD · ELECTRICIDAD · CONECTIVIDAD </small>  </span>  </a>  <nav class = "links" aria-label = "Navegación">  <a href = "#servicios"> Servicios </a>  <a href = "#soluciones"> Soluciones </a>  <a href = "#proceso"> Cómo trabajamos </a>  <a class = "pill" href = "https://wa.me/5491156383386" target = "_blank" rel = "noopener"> Contactar a Intex <span> ↗ </span>  </a>  </nav>  </div>  </header>
+     <main>
+     <section class = "hero" id = "inicio">  <div class = "wrap">  <div>  <div class = "eyebrow"> Protección y conectividad </div>  <h1> Tu espacio,  <br> más <em> seguro. </em>  </h1>  <p> Instalamos tecnología que te ayuda a cuidar, comunicar y controlar. Alarmas, cámaras, telefonía, electricidad para hogares, comercios e industrias. </p>  <div class = "heroactions">  <a class = "pill" href = "#contacto"> Hablemos de tu instalación <span> ↗ </span>  </a>  <a class = "textlink" href = "#servicios"> Ver servicios <span> ↓ </span>  </a>  </div>  <div class = "hero-proof">  <span>  <i class = "dot">  </i> Soluciones a medida </span>  <span>  <i class = "dot">  </i> Instalación y puesta en marcha </span>  <span>  <i class = "dot">  </i> Atención para empresas y hogares </span>  </div>  </div>
+     <div class = "tech-art" aria-hidden = "true">  <div class = "orbit">  </div>  <i class = "signal s1">  </i>  <i class = "signal s2">  </i>  <i class = "signal s3">  </i>  <i class = "signal s4">  </i>  <div class = "core">  <svg viewBox = "0 0 80 80" fill = "none">  <path d = "M40 8 65 18v19c0 17-10 28-25 36C25 65 15 54 15 37V18L40 8Z" stroke = "#35d2e5" stroke-width = "3" />  <path d = "m29 40 7 7 16-17" stroke = "#ff784f" stroke-width = "4" stroke-linecap = "round" stroke-linejoin = "round" />  </svg>  </div>  <div class = "node n1">  <svg viewBox = "0 0 32 32">  <path d = "M6 15v-3a10 10 0 0 1 20 0v3M6 15h4v9H8a2 2 0 0 1-2-2v-7Zm20 0h-4v9h2a2 2 0 0 0 2-2v-7ZM22 25c-1 2-3 3-6 3" />  </svg>  </div>  <div class = "node n2">  <svg viewBox = "0 0 32 32">  <path d = "M5 13a16 16 0 0 1 22 0M9 17a10 10 0 0 1 14 0m-10 4a4 4 0 0 1 6 0M16 25h.01" />  </svg>  </div>  <div class = "node n3">  <svg viewBox = "0 0 32 32">  <path d = "M10 14h12a4 4 0 0 1 4 4v8H6v-8a4 4 0 0 1 4-4ZM12 14V9a4 4 0 1 1 8 0v5M10 20h.01M22 20h.01" />  </svg>  </div>  <div class = "node n4">  <svg viewBox = "0 0 32 32">  <path d = "M12 3 5 17h9l-2 12 15-17h-9l2-9h-8Z" />  </svg>  </div>  </div>
+     </div>  </section>
+     <section class = "intro">  <div class = "wrap introgrid">  <div>  <div class = "eyebrow" style = "color:#078b9b"> Quiénes somos </div>  <h2> Conectamos tus ideas con soluciones concretas. </h2>  </div>  <div class = "introcopy">  <p>  <strong> Intex </strong> brinda servicios de instalación y soporte en seguridad electrónica, comunicaciones e infraestructura eléctrica. Nos ocupamos de entender el espacio y el uso para proponer un sistema claro, bien integrado y preparado para el día a día. </p>  <p> Desde una cámara o una alarma hasta instalaciones completas: coordinamos los trabajos y dejamos cada sistema configurado para que puedas usarlo con confianza. </p>  </div>  </div>  </section>
+ <section class = "services" id = "servicios">  <div class = "wrap">  <div class = "sectionhead">  <div>  <div class = "eyebrow" style = "color:#078b9b"> Servicios </div>  <h2> Tecnología que trabaja <br> para vos. </h2>  </div>  <p> Un solo equipo para planificar, instalar y poner en marcha sistemas que mejoran la seguridad, la comunicación y el funcionamiento de tus espacios. </p>  </div>  <div class = "cards">
+     <article class = "card">  <span class = "icon">  <svg viewBox = "0 0 32 32">  <path d = "M16 4 26 8v7c0 7-4 11-10 14C10 26 6 22 6 15V8l10-4Z" />  <path d = "M12 16h8m-4-4v8" />  </svg>  </span>  <span class = "arrow"> ↗ </span>  <h3> Alarmas </h3>  <p> Sistemas de alarma para viviendas, comercios y espacios de trabajo. Instalación, configuración y asesoramiento según cada necesidad. </p>  </article>
+ <article class = "card">  <span class = "icon">  <svg viewBox = "0 0 32 32">  <path d = "M4 11 16 5l12 6-12 6-12-6Z" />  <path d = "M7 14v8l9 5 9-5v-8M16 17v10M25 19l4 2v-8l-4-2" />  </svg>  </span>  <span class = "arrow"> ↗ </span>  <h3> Cámaras de vigilancia </h3>  <p> Instalación de cámaras y sistemas de videovigilancia para observar y registrar lo que sucede en tus instalaciones. </p>  </article>
+     <article class = "card">  <span class = "icon">  <svg viewBox = "0 0 32 32">  <path d = "M10 4h12v24H10zM13 8h6m-6 4h6m-6 4h2m3 0h1M14 24h4" />  <path d = "M6 8H4v16h2m22-16h-2v16h2" />  </svg>  </span>  <span class = "arrow"> ↗ </span>  <h3> Telefonía y redes </h3>  <p> Instalación y organización de telefonía, cableado estructurado y conectividad para hogares, oficinas y comercios. </p>  </article>
+ <article class = "card">  <span class = "icon">  <svg viewBox = "0 0 32 32">  <path d = "M18 3 7 18h8l-1 11 11-16h-8l1-10Z" />  </svg>  </span>  <span class = "arrow"> ↗ </span>  <h3> Instalaciones eléctricas </h3>  <p> Trabajos eléctricos, tendido y adecuación de circuitos, tableros y puntos de conexión para nuevas instalaciones o reformas. </p>  </article>
 
-      <article class="card"><span class="icon"><svg viewBox="0 0 32 32"><path d="M5 24h22M8 24V13l8-6 8 6v11M12 24v-7h8v7M4 10l4-4m20 4-4-4"/><circle cx="25" cy="8" r="3"/></svg></span><span class="arrow">↗</span><h3>Integración y mantenimiento</h3><p>Revisión, ampliación y mantenimiento de instalaciones existentes para que tus sistemas funcionen de manera coordinada.</p></article>
-    </div></div></section>
-    <section class="gallery" aria-label="Imágenes ilustrativas de los servicios"><div class="wrap"><div class="sectionhead"><div><div class="eyebrow" style="color:#078b9b">Nuestros servicios en acción</div><h2>Seguridad, energía y conexión.</h2></div><p>Imágenes ilustrativas de instalaciones relacionadas con los servicios de Intex.</p></div><div class="gallerygrid"><figure><img src="https://s3.eu-west-1.amazonaws.com/wil-lec/_720x520_crop_center-center_75_none/cctv-high-quality.jpg" alt="Instalación de cámara de vigilancia en exterior" loading="lazy"><figcaption>Cámaras de vigilancia<small>Ubicación y cobertura</small></figcaption></figure><figure><img src="https://blog.bluenergygroup.it/hubfs/paladin-security-canada-usa-home-1.jpg" alt="Teclado de sistema de alarma instalado en una vivienda" loading="lazy"><figcaption>Sistemas de alarma<small>Protección para tus espacios</small></figcaption></figure><figure><img src="https://images.squarespace-cdn.com/content/v1/672938b535f7096a644a11c9/9068d43e-d3a5-4118-a26e-2491f0d6a5d6/dreamstime_m_9011341.jpg?format=1000w" alt="Trabajo de instalación en tablero eléctrico" loading="lazy"><figcaption>Instalaciones eléctricas<small>Orden y seguridad</small></figcaption></figure><figure><img src="https://images.unsplash.com/photo-1698668975271-2ba9a323be6b?auto=format&fit=crop&w=1000&q=80" alt="Rack con equipos y cableado de red" loading="lazy"><figcaption>Telefonía y redes<small>Conectividad organizada</small></figcaption></figure></div></div></section>    <section class="feature" id="soluciones"><div class="wrap featuregrid"><div><div class="eyebrow">Una instalación bien pensada</div><h2>Todo conectado.<br>Todo bajo control.</h2><p>Diseñamos soluciones que se adaptan a las características de cada lugar y a la forma en que lo usás. Te acompañamos desde la consulta inicial hasta la puesta en marcha.</p><div class="checks"><span class="check"><i>✓</i> Hogares y edificios</span><span class="check"><i>✓</i> Comercios y oficinas</span><span class="check"><i>✓</i> Industrias y talleres</span><span class="check"><i>✓</i> Consorcios y espacios comunes</span></div></div><div class="panel"><div class="panelgrid"></div><div class="panelcontent"><span class="paneltag">Seguridad · energía · conectividad</span><h3>Una respuesta integral para cada espacio.</h3><p>Planificación, instalación y configuración en un mismo servicio.</p></div></div></div></section>
-    <section class="steps" id="proceso"><div class="wrap"><div class="sectionhead"><div><div class="eyebrow" style="color:#078b9b">Cómo trabajamos</div><h2>Claro desde el primer paso.</h2></div><p>Nos contás qué necesitás y coordinamos una solución adecuada para el lugar, el uso y el alcance del trabajo.</p></div><div class="stepgrid"><article class="step"><b>01 / ESCUCHAMOS</b><h3>Entendemos tu necesidad</h3><p>Conversamos sobre el espacio, el problema y el resultado que querés lograr.</p></article><article class="step"><b>02 / PLANIFICAMOS</b><h3>Definimos el trabajo</h3><p>Evaluamos alternativas, materiales y ubicación de los equipos para cada instalación.</p></article><article class="step"><b>03 / INSTALAMOS</b><h3>Configuramos y ponemos en marcha</h3><p>Realizamos el trabajo y verificamos el funcionamiento de los sistemas instalados.</p></article></div></div></section>
-    <section class="cta"><div class="wrap ctain"><div><h2>¿Qué necesitás instalar o mejorar?</h2><p>Contanos tu idea. Te ayudamos a encontrar una solución para tu espacio.</p></div><a class="pill" href="#contacto">Contactar a Intex <span>↗</span></a></div></section>
-    <section class="contact" id="contacto"><div class="wrap contactgrid"><div><div class="eyebrow" style="color:#078b9b">Contacto</div><h2>Empecemos<br>por una consulta.</h2><p>Comentanos qué servicio necesitás, dónde se realizaría y si es para una vivienda, comercio o empresa. Con esos datos podemos orientarte mejor.</p></div><div class="contactbox"><h3>Hablemos de tu proyecto</h3><p>Agregá el WhatsApp, teléfono o correo de Intex para que tus clientes puedan comunicarse directamente desde esta página.</p><a class="pill" href="#contacto">Completar datos de contacto <span>↗</span></a><p class="note">El botón queda como recordatorio: necesita el número o correo real antes de compartir la página como sitio terminado.</p></div></div></section>
-  </main>
-  <footer class="footer"><div class="wrap footerin"><a class="brand" href="#inicio"><svg class="brandmark" viewBox="0 0 64 64" aria-hidden="true"><rect x="2" y="2" width="60" height="60" rx="16" fill="#132943" stroke="#35d2e5" stroke-width="2"/><path d="M34 11 15 37h15l-4 17 24-32H34l3-11Z" fill="#ff784f"/></svg><span class="brandtype"><b>INTEX</b><small>SEGURIDAD · ELECTRICIDAD · CONECTIVIDAD</small></span></a><span>Instalaciones para hogares, comercios e industrias</span><span>© <span id="year"></span> Intex</span></div></footer>
-  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
-</body>
+ <article class = "card">  <span class = "icon">  <svg viewBox = "0 0 32 32">  <path d = "M5 24h22M8 24V13l8-6 8 6v11M12 24v-7h8v7M4 10l4-4m20 4-4-4" />  <circle cx = "25" cy = "8" r = "3" />  </svg>  </span>  <span class = "arrow"> ↗ </span>  <h3> Integración y mantenimiento </h3>  <p> Revisión, ampliación y mantenimiento de instalaciones existentes para que tus sistemas funcionen de manera coordinada. </p>  </article>
+ </div>  </div>  </section>
+ <section class = "gallery" aria-label = "Imágenes ilustrativas de los servicios">  <div class = "wrap">  <div class = "sectionhead">  <div>  <div class = "eyebrow" style = "color:#078b9b"> Nuestros servicios en acción </div>  <h2> Seguridad, energía y conexión. </h2>  </div>  <p> Imágenes ilustrativas de instalaciones relacionadas con los servicios de Intex. </p>  </div>  <div class = "gallerygrid">  <figure>  <img src = "https://s3.eu-west-1.amazonaws.com/wil-lec/_720x520_crop_center-center_75_none/cctv-high-quality.jpg" alt = "Instalación de cámara de vigilancia en exterior" loading = "lazy">  <figcaption> Cámaras de vigilancia <small> Ubicación y cobertura </small>  </figcaption>  </figure>  <figure>  <img src = "https://blog.bluenergygroup.it/hubfs/paladin-security-canada-usa-home-1.jpg" alt = "Teclado de sistema de alarma instalado en una vivienda" loading = "lazy">  <figcaption> Sistemas de alarma <small> Protección para tus espacios </small>  </figcaption>  </figure>  <figure>  <img src = "https://images.squarespace-cdn.com/content/v1/672938b535f7096a644a11c9/9068d43e-d3a5-4118-a26e-2491f0d6a5d6/dreamstime_m_9011341.jpg?format=1000w" alt = "Trabajo de instalación en tablero eléctrico" loading = "lazy">  <figcaption> Instalaciones eléctricas <small> Orden y seguridad </small>  </figcaption>  </figure>  <figure>  <img src = "https://images.unsplash.com/photo-1698668975271-2ba9a323be6b?auto=format&fit=crop&w=1000&q=80" alt = "Rack con equipos y cableado de red" loading = "lazy">  <figcaption> Telefonía y redes <small> Conectividad organizada </small>  </figcaption>  </figure>  </div>  </div>  </section>  <section class = "feature" id = "soluciones">  <div class = "wrap featuregrid">  <div>  <div class = "eyebrow"> Una instalación bien pensada </div>  <h2> Todo conectado. <br> Todo bajo control. </h2>  <p> Diseñamos soluciones que se adaptan a las características de cada lugar y a la forma en que lo usás. Te acompañamos desde la consulta inicial hasta la puesta en marcha. </p>  <div class = "checks">  <span class = "check">  <i> ✓ </i> Hogares y edificios </span>  <span class = "check">  <i> ✓ </i> Comercios y oficinas </span>  <span class = "check">  <i> ✓ </i> Industrias y talleres </span>  <span class = "check">  <i> ✓ </i> Consorcios y espacios comunes </span>  </div>  </div>  <div class = "panel">  <div class = "panelgrid">  </div>  <div class = "panelcontent">  <span class = "paneltag"> Seguridad · energía · conectividad </span>  <h3> Una respuesta integral para cada espacio. </h3>  <p> Planificación, instalación y configuración en un mismo servicio. </p>  </div>  </div>  </div>  </section>
+ <section class = "steps" id = "proceso">  <div class = "wrap">  <div class = "sectionhead">  <div>  <div class = "eyebrow" style = "color:#078b9b"> Cómo trabajamos </div>  <h2> Claro desde el primer paso. </h2>  </div>  <p> Nos contás qué necesitás y coordinamos una solución adecuada para el lugar, el uso y el alcance del trabajo. </p>  </div>  <div class = "stepgrid">  <article class = "step">  <b> 01 / ESCUCHAMOS </b>  <h3> Entendemos tu necesidad </h3>  <p> Conversamos sobre el espacio, el problema y el resultado que querés lograr. </p>  </article>  <article class = "step">  <b> 02 / PLANIFICAMOS </b>  <h3> Definimos el trabajo </h3>  <p> Evaluamos alternativas, materiales y ubicación de los equipos para cada instalación. </p>  </article>  <article class = "step">  <b> 03 / INSTALAMOS </b>  <h3> Configuramos y ponemos en marcha </h3>  <p> Realizamos el trabajo y verificamos el funcionamiento de los sistemas instalados. </p>  </article>  </div>  </div>  </section>
+     <section class = "cta">  <div class = "wrap ctain">  <div>  <h2> ¿Qué necesitás instalar o mejorar?  </h2>  <p> Contanos tu idea. Te ayudamos a encontrar una solución para tu espacio. </p>  </div>  <a class = "pill" href = "https://wa.me/5491156383386" target = "_blank" rel = "noopener"> Contactar a Intex <span> ↗ </span>  </a>  </div>  </section>
+     <section class = "contact" id = "contacto">  <div class = "wrap contactgrid">  <div>  <div class = "eyebrow" style = "color:#078b9b"> Contacto </div>  <h2> Empecemos <br> por una consulta. </h2>  <p> Comentanos qué servicio necesitás, dónde se realizaría y si es para una vivienda, comercio o empresa. Con esos datos podemos orientarte mejor. </p>  </div>  <div class = "contactbox">  <h3> Contactá directamente a Intex </h3>  <p> Elegí el canal que te resulte más cómodo para hacer tu consulta. </p>  <a class = "pill" href = "https://wa.me/5491156383386" target = "_blank" rel = "noopener"> Escribir por WhatsApp <span> ↗ </span>  </a>  <div class = "contactdetails">  <a href = "tel:+5491156383386">  <span> Teléfono </span>  <strong> +54 9 11 5638-3386 </strong>  </a>  <a href = "mailto:seguridadintex@gmail.com">  <span> Correo electrónico </span>  <strong> seguridadintex@gmail.com </strong>  </a>  </div>  </div>  </div>  </section>
+     </main>
+     <footer class = "footer">  <div class = "wrap footerin">  <a class = "brand" href = "#inicio">  <svg class = "brandmark" viewBox = "0 0 64 64" aria-hidden = "true">  <rect x = "2" y = "2" width = "60" height = "60" rx = "16" fill = "#132943" stroke = "#35d2e5" stroke-width = "2" />  <path d = "M34 11 15 37h15l-4 17 24-32H34l3-11Z" fill = "#ff784f" />  </svg>  <span class = "brandtype">  <b>INTEX<span class="brand-accent">-SEGURIDAD</span></b>  <small> SEGURIDAD · ELECTRICIDAD · CONECTIVIDAD </small>  </span>  </a>  <span> Instalaciones para hogares, comercios e industrias </span>  <span> © <span id = "year">  </span> Intex </span>  </div>  </footer>
+     <script> document.getElementById('year').textContent = new Date().getFullYear();
+ </script>
+ </body>
 </html>
- 
