@@ -1026,7 +1026,26 @@ a {
         flex-direction:column
     }
 }
- </style>
+ 
+@media (max-width:700px) and (orientation:portrait) {
+    .hero-watermark {
+        top:auto;
+        right:0;
+        bottom:0;
+        left:0;
+        width:100%;
+        height:auto;
+        max-height:45%;
+        object-fit:contain;
+        object-position:center bottom;
+        transform:none;
+        opacity:.58;
+        filter:brightness(.56) saturate(.82);
+        mask-image:linear-gradient(to bottom, transparent 0%, #000 18%);
+        -webkit-mask-image:linear-gradient(to bottom, transparent 0%, #000 18%)
+    }
+}
+</style>
  </head>
  <body>
  <div class = "top">  <div class = "wrap">  <span> Soluciones en seguridad y tecnología </span>  <span>  <strong> Instalación · configuración · mantenimiento </strong> </span>  </div>  </div>
